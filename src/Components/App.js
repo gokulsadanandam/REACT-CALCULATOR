@@ -17,7 +17,7 @@ class App extends Component {
 
   Calculate(data) {
     switch (data) {
-      case "clear":
+      case "cls":
         this.setState({
           operations: [],
           data: 0
@@ -43,23 +43,41 @@ class App extends Component {
   }
 
   render() {
-    const style = {
-      padding: "10px",
-      textAlign: "center",
-      margin: "150px 0px auto 0px"
-    };
+
     return (
-      <div style={style}>
-        <div className="row1">{this.state.data}</div>
+      <div>
+      <div className="Header">
+        React Calculator
+      </div>
+      <div className="mainFrame">
+        <div className="row1">
+                {this.state.data}
+        </div>
         <div className="row2">
           <Box
-            data={"clear"}
+            data={"cls"}
             clickHandle={this.Calculate}
             size={"30px"}
-            cols={3.11}
+            cols={1}
             rows={4}
-            color={"white"}
-            textcolor={"black"}
+            align={"center"}
+            operations={this.state}
+          />
+          <Box
+            data={"("}
+            clickHandle={this.Calculate}
+            size={"30px"}
+            cols={1}
+            rows={4}
+            align={"center"}
+            operations={this.state}
+          />
+          <Box
+            data={")"}
+            clickHandle={this.Calculate}
+            size={"30px"}
+            cols={1}
+            rows={4}
             align={"center"}
             operations={this.state}
           />
@@ -70,7 +88,6 @@ class App extends Component {
             cols={1}
             rows={4}
             color={"#F2274F"}
-            textcolor={"black"}
             align={"center"}
             operations={this.state}
           />
@@ -82,8 +99,6 @@ class App extends Component {
             size={"30px"}
             cols={1}
             rows={4}
-            color={"white"}
-            textcolor={"black"}
             align={"center"}
             operations={this.state}
           />
@@ -93,8 +108,6 @@ class App extends Component {
             size={"30px"}
             cols={1}
             rows={4}
-            color={"white"}
-            textcolor={"black"}
             align={"center"}
             operations={this.state}
           />
@@ -104,19 +117,16 @@ class App extends Component {
             size={"30px"}
             cols={1}
             rows={4}
-            color={"white"}
-            textcolor={"black"}
             align={"center"}
             operations={this.state}
           />
           <Box
-            data={"-"}
+            data={"*"}
             clickHandle={this.Calculate}
             size={"30px"}
             cols={1}
             rows={4}
             color={"#F2274F"}
-            textcolor={"black"}
             align={"center"}
             operations={this.state}
           />
@@ -128,8 +138,6 @@ class App extends Component {
             size={"30px"}
             cols={1}
             rows={4}
-            color={"white"}
-            textcolor={"black"}
             align={"center"}
             operations={this.state}
           />
@@ -139,8 +147,6 @@ class App extends Component {
             size={"30px"}
             cols={1}
             rows={4}
-            color={"white"}
-            textcolor={"black"}
             align={"center"}
             operations={this.state}
           />
@@ -150,8 +156,6 @@ class App extends Component {
             size={"30px"}
             cols={1}
             rows={4}
-            color={"white"}
-            textcolor={"black"}
             align={"center"}
             operations={this.state}
           />
@@ -162,7 +166,6 @@ class App extends Component {
             cols={1}
             rows={4}
             color={"#F2274F"}
-            textcolor={"black"}
             align={"center"}
             operations={this.state}
           />
@@ -174,8 +177,6 @@ class App extends Component {
             size={"30px"}
             cols={1}
             rows={4}
-            color={"white"}
-            textcolor={"black"}
             align={"center"}
           />
           <Box
@@ -184,8 +185,6 @@ class App extends Component {
             size={"30px"}
             cols={1}
             rows={4}
-            color={"white"}
-            textcolor={"black"}
             align={"center"}
           />
           <Box
@@ -194,12 +193,10 @@ class App extends Component {
             size={"30px"}
             cols={1}
             rows={4}
-            color={"white"}
-            textcolor={"black"}
             align={"center"}
           />
           <Box
-            data={"="}
+            data={"-"}
             clickHandle={this.Calculate}
             size={"30px"}
             cols={1}
@@ -209,6 +206,47 @@ class App extends Component {
             align={"center"}
           />
         </div>
+        <div className="row6">
+          <Box
+            data={"0"}
+            clickHandle={this.Calculate}
+            size={"30px"}
+            cols={1}
+            rows={4}
+            align={"center"}
+            operations={this.state}
+          />
+          <Box
+            data={"."}
+            clickHandle={this.Calculate}
+            size={"30px"}
+            cols={1}
+            rows={4}
+            align={"center"}
+            operations={this.state}
+          />
+          <Box
+            data={"="}
+            clickHandle={this.Calculate}
+            size={"30px"}
+            cols={1}
+            rows={4}
+            color={"#F2274F"}
+            align={"center"}
+            operations={this.state}
+          />
+          <Box
+            data={"%"}
+            clickHandle={this.Calculate}
+            size={"30px"}
+            cols={1}
+            rows={4}
+            color={"#F2274F"}
+            align={"center"}
+            operations={this.state}
+          />
+        </div>
+      </div>
       </div>
     );
   }
